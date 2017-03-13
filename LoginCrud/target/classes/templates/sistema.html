@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+<link href="../static/css/stylelogin.css"
+	th:href="@{css/stylelogin.css}" rel="stylesheet" media="screen" />
+
+<title>Spring Framework Guru</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Passion+One'
+	rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Oxygen'
+	rel='stylesheet' type='text/css' />
+
+</head>
+<body>
+
+	<a href="#">Ver/editar portfólio</a>
+
+	<form class="form-horizontal" action="#" th:action="@{/portfolio/menu}"
+		th:object="${portfolio}" method="POST">
+		<fieldset>
+
+			<!-- Form Name -->
+			<legend class="text-center">Cadastre seu funcionario </legend>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="a">Nome do
+					funcionario:</label>
+				<div class="col-md-4">
+					<input id="a" name="a" type="text" placeholder=""
+						class="form-control input-md" required=""
+						th:field="*{nomeProjeto}" />
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="">Setor:</label>
+				<div class="col-md-4">
+					<textarea class="form-control" id="" name=""
+						th:field="*{descProjeto}">Setor do funcionario:</textarea>
+				</div>
+			</div>
+
+			<!-- Textarea -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="">Função do
+					funcionario:</label>
+				<div class="col-md-4">
+					<textarea class="form-control" id="" name=""
+						th:field="*{desafioProjeto}"></textarea>
+				</div>
+			</div>
+
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Idade:</label>
+				<div class="col-md-4">
+					<input id="textinput" name="textinput" type="text" placeholder=""
+						class="form-control input-md" required=""
+						th:field="*{tempoProjeto}" />
+				</div>
+			</div>
+
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="singlebutton">
+					Cadastrar funcionario:</label>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary">Enviar</button>
+				</div>
+			</div>
+
+		</fieldset>
+	</form>
+</body>
+</html>
