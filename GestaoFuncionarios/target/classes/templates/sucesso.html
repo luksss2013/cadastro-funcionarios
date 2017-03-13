@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<link href="../static/css/bootstrap.css" th:href="@{css/bootstrap.css}"
+	rel="stylesheet" media="screen" />
+<link href="../static/css/stylelogin.css"
+	th:href="@{css/stylelogin.css}" rel="stylesheet" media="screen" />
+
+<title>Spring Framework Guru</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<h1>Usuario cadastrado com sucesso</h1>
+	<p th:text="*{usuario.nome}"></p>
+	<p th:text="*{usuario.email}"></p>
+	<p th:text="*{usuario.nomeUsuario}"></p>
+	<p th:text="*{usuario.senhaUsuario}"></p>
+	<a href="login">Logar</a>
+</body>
+</html>
+
+

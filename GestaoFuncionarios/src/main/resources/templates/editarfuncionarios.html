@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous" />
+<title>Getting Started: Handling Form Submission</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>
+		Cadastrar novo funcionario: <a
+			href="http://localhost:8080/portfolio/menu">Adicionar</a>
+	</h3>
+
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10	">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Funcionarios</h3>
+
+					</div>
+
+					<table class="table table-hover" id="dev-table">
+						<thead>
+							<tr>
+								<th>Nome</th>
+								<th>Setor</th>
+								<th>Função</th>
+								<th>Idade</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="listaFuncionarios : ${listaFuncionarios}">
+								<td th:text="${listaFuncionarios.nomeFuncionario}">1</td>
+								<td th:text="${listaFuncionarios.setorFuncionario}">City</td>
+								<td th:text="${listaFuncionarios.funcaoFuncionario}">City</td>
+								<td th:text="${listaFuncionarios.idadeFuncionario}">City</td>
+								<form action="#" th:action="@{/funcionario/menu/removeFuncionario}"
+									method="POST">
+									<td><button type="submit" class="btn btn-primary"
+											name="remover" th:value="*{listaFuncionarios.nomeFuncionario}">Remover</button></td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
